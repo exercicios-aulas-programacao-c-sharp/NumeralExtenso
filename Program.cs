@@ -1,5 +1,6 @@
 ﻿using System;
 using Humanizer;
+using Figgle;
 
 namespace NumeralExtenso
 {
@@ -8,11 +9,14 @@ namespace NumeralExtenso
         static void Main(string[] args)
         {
             int numero;
+            string numeroTextao;
+
             Console.Write("Digite um número ..: ");
             
             numero = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine($"\n{numero.ToWords()}");
+            numeroTextao = FiggleFonts.ThreeDDiagonal.Render(numero.ToWords());
+            
+            Console.WriteLine($"\n{numeroTextao}");
 
         }
     }
